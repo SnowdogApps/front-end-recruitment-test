@@ -257,3 +257,14 @@ gulp.task('generate-service-worker', cb => {
 
 // Load custom tasks from the `tasks` directory
 // try { require('require-dir')('tasks'); } catch (err) { console.error(err); }
+
+///////////////////////////////////////////////////////////////////////////////
+//////////////////////////////// SNOWDOG //////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+
+var symlink = require('gulp-symlink');
+
+gulp.task('submodule', function(){
+  gulp.src('submodule/submodule.html')
+    .pipe(symlink('app/submodule.html'));
+});
