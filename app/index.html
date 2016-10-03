@@ -50,7 +50,12 @@
 
     <!-- Your styles -->
     <link rel="stylesheet" href="styles/main.css">
+
+    <!-- Custom CSS generated from style.scss file -->
+
     <link rel="stylesheet" href="styles/style.css">
+
+
   </head>
   <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -68,14 +73,14 @@
           <a href="#features" class="mdl-layout__tab">Details</a>
           <a href="#features" class="mdl-layout__tab">Technology</a>
           <a href="#features" class="mdl-layout__tab">FAQ</a>
-          <a href="#features" class="mdl-layout__tab">CHECKOUT</a>
+          <a href="#checkout" class="mdl-layout__tab">CHECKOUT</a>
           <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent" id="add">
             <i class="material-icons" role="presentation">add</i>
             <span class="visuallyhidden">Add</span>
           </button>
         </div>
       </header>
-      <main class="mdl-layout__content">
+<!--       <main class="mdl-layout__content">
         <div class="mdl-layout__tab-panel is-active" id="overview">
           <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
             <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
@@ -228,8 +233,118 @@
               </p>
             </div>
           </section>
-        </div>
-        <footer class="mdl-mega-footer">
+        </div> -->
+
+
+
+
+
+
+        <section id="checkout">
+
+          <div class="container">
+
+            <div class="sub-header">
+
+              <div>1</div>
+              PERSONAL INFORMATION
+            </div>
+
+            <div class="sub-form clearfix">
+
+                <div class="col-4">
+
+                  <form>
+
+                    <div class="row clearfix">
+                      <div class="col-3 format">
+                        First Name<br>
+                        <input type="text" name="FirstName" value="Elon">
+                      </div>
+                      <div class="col-3 format">
+                        Last Name<br>
+                        <input type="text" name="LastName" value="Musk">
+                      </div>                 
+                    </div>
+
+                    <div class="row clearfix">
+                      <div class="col-6 format">
+                        Email<br>
+                        <input type="email" name="Email" value="elon@spacex.com">
+                      </div>
+                    </div>
+
+                    <div class="row clearfix">
+                      <div class="col-3 format">
+                        Country<br>
+                          <select name="Country">
+                            <option value="us">U.S.</option>
+                            <option value="russia">Russia</option>
+                            <option value="china">China</option>
+                            <option value="uk">U.K.</option>
+                          </select>
+                      </div>
+
+                      <div class="col-3 format">
+                        Postal Code<br>
+                        <input type="text" name="PostalCode" value="10001">
+                      </div>
+                    </div>
+
+                    <div class="row clearfix">
+                      <div class="col-6 format">
+                        Phone number<br>
+                        <input type="text" name="Phone" value="(212) 693-92-92">
+                      </div>
+                    </div>
+                  </form>
+                </div>
+
+                <div class="col-2">
+                  YOUR
+                </div>
+
+            </div>
+
+            <div class="sub-header">
+              <div>2</div>
+              PAYMENTS DETAIL
+            </div>
+
+            <div class="sub-form clearfix">
+
+                <div class="col-4">
+
+                  <form>
+
+                    <div class="row clearfix">
+                      <div class="col-6 format">
+                        Credit Card Number<br>
+                        <input type="text" name="Card" value="0000 0000 0000 0000">
+                      </div>
+                    </div>
+
+                    <div class="row clearfix">
+                      <div class="col-3 format">
+                        Security Code<br>
+                        <input type="password" name="Code" value="***">
+                      </div>
+                      <div class="col-3 format">
+                        Expiration Date<br>
+                        <input type="text" name="Expiry" value="MM/YY">
+                      </div>
+                    </div>
+                  </form>
+                </div>
+            </div>
+          </div>
+        </section>
+
+
+
+
+
+<!--         <footer class="mdl-mega-footer">
           <div class="mdl-mega-footer--middle-section">
             <div class="mdl-mega-footer--drop-down-section">
               <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
@@ -282,7 +397,7 @@
             </ul>
           </div>
         </footer>
-      </main>
+      </main> -->
     </div>
 
     <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>

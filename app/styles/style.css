@@ -1,0 +1,81 @@
+.col-1 {
+  width: 14.66667%;
+  float: left;
+  box-sizing: border-box;
+  margin: 1%; }
+
+.col-2 {
+  width: 31.33333%;
+  float: left;
+  box-sizing: border-box;
+  margin: 1%; }
+
+.col-3 {
+  width: 48%;
+  float: left;
+  box-sizing: border-box;
+  margin: 1%; }
+
+.col-4 {
+  width: 64.66667%;
+  float: left;
+  box-sizing: border-box;
+  margin: 1%; }
+
+.col-5 {
+  width: 81.33333%;
+  float: left;
+  box-sizing: border-box;
+  margin: 1%; }
+
+.col-6 {
+  width: 98%;
+  float: left;
+  box-sizing: border-box;
+  margin: 1%; }
+
+.clearfix::before, .clearfix::after {
+  content: "";
+  display: table;
+  clear: both; }
+
+#checkout {
+  box-sizing: border-box;
+  background-color: #ffffff;
+  padding: 100px 0; }
+  #checkout .container {
+    width: 1024px;
+    margin: 0 auto;
+    background-color: #f2f2f2;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75); }
+    #checkout .container .sub-header {
+      color: #000000;
+      font-weight: bold;
+      padding: 16px 0 0 46px; }
+      #checkout .container .sub-header div {
+        display: inline-block;
+        border-radius: 50%;
+        color: #f2f2f2;
+        background-color: #000000;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        margin-right: 20px; }
+    #checkout .container .sub-form {
+      width: 860px;
+      margin: 0 auto; }
+      #checkout .container .sub-form .format {
+        background-color: #ffffff;
+        border-radius: 5px;
+        padding: 5px;
+        color: #515356;
+        font-size: 12px;
+        font-weight: bold;
+        box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.25); }
+        #checkout .container .sub-form .format input, #checkout .container .sub-form .format select {
+          width: 100%;
+          border: none;
+          color: #9b9b9b;
+          font-size: 16px; }
+
+/*# sourceMappingURL=style.css.map */
