@@ -79,5 +79,24 @@
     });
   }
 
+  function bacon(){
+
+    var button = document.querySelector('main section button');
+    var img = document.querySelector('main section img');
+    var section = document.querySelectorAll('main section');
+
+    button.addEventListener('click', function(){
+
+      var clone = document.createElement('img');
+      clone.src = img.src;
+      clone.style.width = '100px';
+      clone.style.height = '100px';
+      section[1].appendChild(clone);
+
+    })
+  }
+
+  bacon();
+
   // Your custom JavaScript goes here
 })();
