@@ -24,6 +24,22 @@ $grid: 6;
 	background-color: #ffffff;
 	padding: 100px 0;
 
+	.text-r {
+		text-align: right;
+	}
+
+	.text-bold {
+		font-weight: bold;
+	}
+
+	.text-large {
+		font-size: 20px;
+	}
+
+	.relative {
+		position: relative;
+	}
+
 	.container {
 
 		width: 1024px;
@@ -36,8 +52,9 @@ $grid: 6;
 			color: #000000;
 			font-weight: bold;
 			padding: 16px 0 0 46px;
+			position: relative;
 
-			div {
+			.number {
 
 				display: inline-block;
 				border-radius: 50%;
@@ -48,11 +65,56 @@ $grid: 6;
 				text-align: center;
 				margin-right: 20px;
 			}
+
+			.padlock {
+				position: absolute;
+				display: inline-block;
+				width: 16px;
+				height: 16px;
+				background: url('../images/padlock.png');
+				background-size: contain;
+				background-repeat: no-repeat;
+				bottom: 2px;
+				left: 230px;
+			}
 		}
 		.sub-form {
 
 			width: 860px;
 			margin: 0 auto;
+
+			.card {
+				position: absolute;
+				top: 15px;
+				right: 10px;
+				padding: 3px;
+				border: 1px solid #cccccc;
+				border-radius: 3px;
+
+				div {
+					width: 40px;
+					height: 13px;
+					background: url('../images/visa.png');
+					background-size: contain;
+					background-repeat: no-repeat;
+				}
+			}
+
+			.mark {
+				position: absolute;
+				width: 20px;
+				height: 20px;
+				border: 1px solid #cccccc;
+				color: #cccccc;
+				border-radius: 50%;
+				text-align: center;
+				right: 15px;
+				top: 15px;
+			}
+
+			.card {
+
+			}
 
 			.format {
 				background-color: #ffffff;
@@ -63,11 +125,73 @@ $grid: 6;
 				font-weight: bold;
 				box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.25);
 
-				input, select {
+				input {
 					width: 100%;
 					border: none;
 					color: #9b9b9b;
 					font-size: 16px;
+				}
+
+				.input {
+					width: 50%;
+				}
+
+				select {
+					width: 100%;
+					color: #9b9b9b;
+					font-size: 16px;
+					border: 0px;
+        			outline: 0px;
+				}
+			}
+
+			.order {
+				background-color: #ffffff;
+				padding: 5px;
+				color: #000000;
+				font-size: 12px;
+				border-radius: 5px;
+
+				.order-content {
+					border: 2px dotted #cccccc;
+					border-radius: 5px;
+					padding: 20px;
+
+					.empty {
+						width: 100%;
+						height: 2px;
+						border-bottom: 1px dashed #cccccc;
+						margin: 10px 0;
+					}
+				}
+			}
+
+			.button {
+				position: relative;
+				width: 100%;
+				font-weight: bold;
+				font-size: 14px;
+				padding: 18px 0;
+				border: none;
+				background-color: #6bd400;
+				color: #ffffff;
+				border-radius: 5px;
+				box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.75);
+
+				&:active {
+					background-color: #57ad00;
+				} 
+
+				.cart {
+					position: absolute;
+					width: 16px;
+					height: 16px;
+					background: url('../images/cart.png');
+					background-size: contain;
+					background-repeat: no-repeat;
+					left: 170px;
+					top: 18px;
+
 				}
 			}
 		}

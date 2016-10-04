@@ -80,7 +80,7 @@
           </button>
         </div>
       </header>
-<!--       <main class="mdl-layout__content">
+      <main class="mdl-layout__content">
         <div class="mdl-layout__tab-panel is-active" id="overview">
           <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
             <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
@@ -233,7 +233,7 @@
               </p>
             </div>
           </section>
-        </div> -->
+        </div>
 
 
 
@@ -246,7 +246,7 @@
 
             <div class="sub-header">
 
-              <div>1</div>
+              <div class="number">1</div>
               PERSONAL INFORMATION
             </div>
 
@@ -258,57 +258,107 @@
 
                     <div class="row clearfix">
                       <div class="col-3 format">
-                        First Name<br>
-                        <input type="text" name="FirstName" value="Elon">
+                        <label>
+                          First Name<br>
+                          <input type="text" name="FirstName" placeholder="Elon">
+                        </label>
                       </div>
                       <div class="col-3 format">
-                        Last Name<br>
-                        <input type="text" name="LastName" value="Musk">
+                        <label>
+                          Last Name<br>
+                          <input type="text" name="LastName" placeholder="Musk">
+                        </label>
                       </div>                 
                     </div>
 
                     <div class="row clearfix">
                       <div class="col-6 format">
-                        Email<br>
-                        <input type="email" name="Email" value="elon@spacex.com">
+                        <label>
+                          Email<br>
+                          <input type="email" name="Email" placeholder="elon@spacex.com">
+                        </label>
                       </div>
                     </div>
 
                     <div class="row clearfix">
                       <div class="col-3 format">
-                        Country<br>
-                          <select name="Country">
-                            <option value="us">U.S.</option>
-                            <option value="russia">Russia</option>
-                            <option value="china">China</option>
-                            <option value="uk">U.K.</option>
-                          </select>
+                        <label>
+                          Country<br>
+                            <select name="Country">
+                              <option>U.S.</option>
+                              <option>Russia</option>
+                              <option>China</option>
+                              <option>U.K.</option>
+                            </select>
+                        </label>
                       </div>
 
                       <div class="col-3 format">
-                        Postal Code<br>
-                        <input type="text" name="PostalCode" value="10001">
+                        <label>
+                          Postal Code<br>
+                          <input type="text" name="PostalCode" placeholder="10001">
+                        </label>
                       </div>
                     </div>
 
                     <div class="row clearfix">
                       <div class="col-6 format">
-                        Phone number<br>
-                        <input type="text" name="Phone" value="(212) 693-92-92">
+                        <label>
+                          Phone number<br>
+                          <input type="text" name="Phone" placeholder="(212) 693-92-92">
+                        </label>
                       </div>
                     </div>
                   </form>
                 </div>
 
                 <div class="col-2">
-                  YOUR
+                  <div class="order">
+                    <div class="order-content">
+                      <div class="row">
+                        <div class="col-6 text-bold">
+                          YOUR ORDER
+                        </div>
+                      </div>
+                      <div class="row clearfix">
+                        <div class="col-4">Apple Watch Sport</div>
+                        <div class="col-2 text-r">$ 580</div>
+                      </div>
+                      <div class="row clearfix">
+                        <div class="col-4">Modern Buckle</div>
+                        <div class="col-2 text-r">$ 380</div>
+                      </div>
+                      <div class="row clearfix">
+                        <div class="col-6 empty"></div>
+                      </div>
+                      <div class="row clearfix">
+                        <div class="col-4">Total purchases</div>
+                        <div class="col-2 text-r">$ 960.00</div>
+                      </div>
+                      <div class="row clearfix">
+                        <div class="col-4">Estimated tax</div>
+                        <div class="col-2 text-r">$ 0</div>
+                      </div>
+                      <div class="row clearfix">
+                        <div class="col-6 empty"></div>
+                      </div>
+                      <div class="row clearfix">
+                        <div class="col-4 text-bold">Total</div>
+                        <div class="col-2 text-r text-bold text-large">$ 960</div>
+                      </div>
+                      
+                    </div>
+                    
+                  </div>
+                  
                 </div>
 
             </div>
 
             <div class="sub-header">
-              <div>2</div>
+              <div class="number">2</div>
               PAYMENTS DETAIL
+              <div class="padlock"></div>
             </div>
 
             <div class="sub-form clearfix">
@@ -318,23 +368,43 @@
                   <form>
 
                     <div class="row clearfix">
-                      <div class="col-6 format">
-                        Credit Card Number<br>
-                        <input type="text" name="Card" value="0000 0000 0000 0000">
+                      <div class="col-6 format relative">
+                        <label>
+                          Credit Card Number
+                          <div class="card">
+                            <div></div>
+                          </div>
+                          <br>
+                          <input class="input" type="text" name="Card" placeholder="0000-0000-0000-0000">
+                        </label>
                       </div>
                     </div>
 
                     <div class="row clearfix">
-                      <div class="col-3 format">
-                        Security Code<br>
-                        <input type="password" name="Code" value="***">
+                      <div class="col-3 format relative">
+                        <label>
+                          Security Code
+                          <div class="mark">?</div>
+                          <br>
+                          <input class="input" type="password" name="Code" placeholder="***">
+                        </label>
                       </div>
                       <div class="col-3 format">
-                        Expiration Date<br>
-                        <input type="text" name="Expiry" value="MM/YY">
+                        <label>
+                          Expiration Date<br>
+                          <input type="text" name="Expiry" placeholder="MM/YY">
+                        </label>
                       </div>
                     </div>
                   </form>
+                  <div class="row clearfix">
+                    <div class="col-6">
+                      <button class="button">
+                        COMPLETE PURCHASE
+                        <div class="cart"></div>
+                      </button>
+                    </div>
+                  </div>
                 </div>
             </div>
           </div>
@@ -344,7 +414,7 @@
 
 
 
-<!--         <footer class="mdl-mega-footer">
+        <footer class="mdl-mega-footer">
           <div class="mdl-mega-footer--middle-section">
             <div class="mdl-mega-footer--drop-down-section">
               <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
@@ -397,7 +467,7 @@
             </ul>
           </div>
         </footer>
-      </main> -->
+      </main>
     </div>
 
     <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>

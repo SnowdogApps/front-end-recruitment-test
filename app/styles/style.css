@@ -43,6 +43,14 @@
   box-sizing: border-box;
   background-color: #ffffff;
   padding: 100px 0; }
+  #checkout .text-r {
+    text-align: right; }
+  #checkout .text-bold {
+    font-weight: bold; }
+  #checkout .text-large {
+    font-size: 20px; }
+  #checkout .relative {
+    position: relative; }
   #checkout .container {
     width: 1024px;
     margin: 0 auto;
@@ -51,8 +59,9 @@
     #checkout .container .sub-header {
       color: #000000;
       font-weight: bold;
-      padding: 16px 0 0 46px; }
-      #checkout .container .sub-header div {
+      padding: 16px 0 0 46px;
+      position: relative; }
+      #checkout .container .sub-header .number {
         display: inline-block;
         border-radius: 50%;
         color: #f2f2f2;
@@ -61,9 +70,42 @@
         height: 20px;
         text-align: center;
         margin-right: 20px; }
+      #checkout .container .sub-header .padlock {
+        position: absolute;
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        background: url("../images/padlock.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        bottom: 2px;
+        left: 230px; }
     #checkout .container .sub-form {
       width: 860px;
       margin: 0 auto; }
+      #checkout .container .sub-form .card {
+        position: absolute;
+        top: 15px;
+        right: 10px;
+        padding: 3px;
+        border: 1px solid #cccccc;
+        border-radius: 3px; }
+        #checkout .container .sub-form .card div {
+          width: 40px;
+          height: 13px;
+          background: url("../images/visa.png");
+          background-size: contain;
+          background-repeat: no-repeat; }
+      #checkout .container .sub-form .mark {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border: 1px solid #cccccc;
+        color: #cccccc;
+        border-radius: 50%;
+        text-align: center;
+        right: 15px;
+        top: 15px; }
       #checkout .container .sub-form .format {
         background-color: #ffffff;
         border-radius: 5px;
@@ -72,10 +114,55 @@
         font-size: 12px;
         font-weight: bold;
         box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.25); }
-        #checkout .container .sub-form .format input, #checkout .container .sub-form .format select {
+        #checkout .container .sub-form .format input {
           width: 100%;
           border: none;
           color: #9b9b9b;
           font-size: 16px; }
+        #checkout .container .sub-form .format .input {
+          width: 50%; }
+        #checkout .container .sub-form .format select {
+          width: 100%;
+          color: #9b9b9b;
+          font-size: 16px;
+          border: 0px;
+          outline: 0px; }
+      #checkout .container .sub-form .order {
+        background-color: #ffffff;
+        padding: 5px;
+        color: #000000;
+        font-size: 12px;
+        border-radius: 5px; }
+        #checkout .container .sub-form .order .order-content {
+          border: 2px dotted #cccccc;
+          border-radius: 5px;
+          padding: 20px; }
+          #checkout .container .sub-form .order .order-content .empty {
+            width: 100%;
+            height: 2px;
+            border-bottom: 1px dashed #cccccc;
+            margin: 10px 0; }
+      #checkout .container .sub-form .button {
+        position: relative;
+        width: 100%;
+        font-weight: bold;
+        font-size: 14px;
+        padding: 18px 0;
+        border: none;
+        background-color: #6bd400;
+        color: #ffffff;
+        border-radius: 5px;
+        box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75); }
+        #checkout .container .sub-form .button:active {
+          background-color: #57ad00; }
+        #checkout .container .sub-form .button .cart {
+          position: absolute;
+          width: 16px;
+          height: 16px;
+          background: url("../images/cart.png");
+          background-size: contain;
+          background-repeat: no-repeat;
+          left: 170px;
+          top: 18px; }
 
 /*# sourceMappingURL=style.css.map */
