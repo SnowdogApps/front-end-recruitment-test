@@ -80,4 +80,38 @@
   }
 
   // Your custom JavaScript goes here
+    
+  /* BACON */
+    
+     
+    var btn = document.querySelector('button');
+    var image = document.querySelector('main section img').src;
+    var section = document.querySelector('main section');
+    
+    //console.log(btn);
+    //console.log(image);
+    //console.log(section);
+    
+    
+    btn.addEventListener('click', function(){
+        //console.log('key was pressed');
+    
+  
+    var imageNew = new Image();
+    imageNew.src = image;
+    imageNew.style.width = "100%";
+    imageNew.style.height = "100%";
+    imageNew.alt = "Bacon";
+    section.appendChild(imageNew);
+
+    
+    });
+    
+    
+
+    
+    
+    
+    
+    
 })();
