@@ -19,4 +19,4 @@ Add simple JS validation to this form and show success/error message on form sub
 
 
 ## Thats it!
-Send us link to your repo and wait for answer. Bye!
+Send us link to your repo at jobs@snow.dog and wait for answer. Bye!
