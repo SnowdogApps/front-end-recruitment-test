@@ -50,6 +50,12 @@
 
     <!-- Your styles -->
     <link rel="stylesheet" href="styles/main.css">
+
+    <!-- Custom CSS generated from style.scss file -->
+
+    <link rel="stylesheet" href="styles/style.css">
+
+
   </head>
   <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -67,6 +73,7 @@
           <a href="#features" class="mdl-layout__tab">Details</a>
           <a href="#features" class="mdl-layout__tab">Technology</a>
           <a href="#features" class="mdl-layout__tab">FAQ</a>
+          <a href="#checkout" class="mdl-layout__tab">CHECKOUT</a>
           <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent" id="add">
             <i class="material-icons" role="presentation">add</i>
             <span class="visuallyhidden">Add</span>
@@ -227,6 +234,157 @@
             </div>
           </section>
         </div>
+
+        <!-- Custom CHECKOUT section -->
+
+        <section id="checkout">
+          <div class="container">
+            <form method="post" action="" id="contactForm">
+              <div class="sub-header">
+                <div class="number">1</div>
+                PERSONAL INFORMATION
+              </div>
+              <div class="sub-form clearfix">
+                  <div class="col-4">
+                      <div class="row clearfix">
+                        <div class="col-3 format">
+                          <label>
+                            First Name<br>
+                            <input id="firstName" type="text" name="FirstName" placeholder="Elon">
+                          </label>
+                        </div>
+                        <div class="col-3 format">
+                          <label>
+                            Last Name<br>
+                            <input id="lastName" type="text" name="LastName" placeholder="Musk">
+                          </label>
+                        </div>                 
+                      </div>
+                      <div class="row clearfix">
+                        <div class="col-6 format">
+                          <label>
+                            Email<br>
+                            <input id="email" type="email" name="Email" placeholder="elon@spacex.com">
+                          </label>
+                        </div>
+                      </div>
+                      <div class="row clearfix">
+                        <div class="col-3 format">
+                          <label>
+                            Country<br>
+                              <select name="Country">
+                                <option>U.S.</option>
+                                <option>Russia</option>
+                                <option>China</option>
+                                <option>U.K.</option>
+                              </select>
+                          </label>
+                        </div>
+                        <div class="col-3 format">
+                          <label>
+                            Postal Code<br>
+                            <input id="postalCode" type="text" name="PostalCode" placeholder="10001">
+                          </label>
+                        </div>
+                      </div>
+                      <div class="row clearfix">
+                        <div class="col-6 format">
+                          <label>
+                            Phone number<br>
+                            <input id="phone" type="text" name="Phone" placeholder="(212) 693-92-92">
+                          </label>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="col-2">
+                    <div class="order">
+                      <div class="order-content">
+                        <div class="row">
+                          <div class="col-6 text-bold">
+                            YOUR ORDER
+                          </div>
+                        </div>
+                        <div class="row clearfix">
+                          <div class="col-4">Apple Watch Sport</div>
+                          <div class="col-2 text-r">$ 580</div>
+                        </div>
+                        <div class="row clearfix">
+                          <div class="col-4">Modern Buckle</div>
+                          <div class="col-2 text-r">$ 380</div>
+                        </div>
+                        <div class="row clearfix">
+                          <div class="col-6 empty"></div>
+                        </div>
+                        <div class="row clearfix">
+                          <div class="col-4">Total purchases</div>
+                          <div class="col-2 text-r">$ 960.00</div>
+                        </div>
+                        <div class="row clearfix">
+                          <div class="col-4">Estimated tax</div>
+                          <div class="col-2 text-r">$ 0</div>
+                        </div>
+                        <div class="row clearfix">
+                          <div class="col-6 empty"></div>
+                        </div>
+                        <div class="row clearfix">
+                          <div class="col-4 text-bold">Total</div>
+                          <div class="col-2 text-r text-bold text-large">$ 960</div>
+                        </div>                      
+                      </div>                    
+                    </div>                  
+                  </div>
+              </div>
+              <div class="sub-header">
+                <div class="number">2</div>
+                PAYMENTS DETAIL
+                <div class="padlock"></div>
+              </div>
+              <div class="sub-form clearfix">
+                  <div class="col-4">
+                      <div class="row clearfix">
+                        <div class="col-6 format relative">
+                          <label>
+                            Credit Card Number
+                            <div class="card">
+                              <div></div>
+                            </div>
+                            <br>
+                            <input id="card" class="input" type="text" name="Card" placeholder="0000-0000-0000-0000">
+                          </label>
+                        </div>
+                      </div>
+                      <div class="row clearfix">
+                        <div class="col-3 format relative">
+                          <label>
+                            Security Code
+                            <div class="mark">?</div>
+                            <br>
+                            <input id="pass" class="input" type="password" name="Code" placeholder="***">
+                          </label>
+                        </div>
+                        <div class="col-3 format">
+                          <label>
+                            Expiration Date<br>
+                            <input id="date" type="text" name="Expiry" placeholder="MM/YY">
+                          </label>
+                        </div>
+                      </div>
+                    <div class="row clearfix">
+                      <div class="col-6">
+                        <button id="button" class="button">
+                          COMPLETE PURCHASE
+                          <div class="cart"></div>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <!-- End of custom CHECKOUT section -->
+
         <footer class="mdl-mega-footer">
           <div class="mdl-mega-footer--middle-section">
             <div class="mdl-mega-footer--drop-down-section">

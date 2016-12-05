@@ -79,5 +79,88 @@
     });
   }
 
+// more bacon function - 3rd task
+
+  function bacon(){
+
+    var button = document.querySelector('main section button');
+    var img = document.querySelector('main section img');
+    var section = document.querySelectorAll('main section');
+
+    button.addEventListener('click', function(){
+
+      var clone = document.createElement('img');
+      clone.src = img.src;
+      clone.style.width = '100px';
+      clone.style.height = '100px';
+      section[1].appendChild(clone);
+
+    })
+  }
+
+// contact form validate function - 5th task
+
+  function formValidate(){
+
+// variables for input holders
+
+    var firstName = document.getElementById('firstName'),
+        lastName = document.getElementById('lastName'),
+        email = document.getElementById('email'),
+        postalCode = document.getElementById('postalCode'),
+        phone = document.getElementById('phone'),
+        card = document.getElementById('card'),
+        pass = document.getElementById('pass'),
+        button = document.getElementById('button');
+
+// check whenever submit button is clicked
+
+    button.addEventListener('click', function(e){
+
+// page reload is impossible in case of form fill error
+
+      e.preventDefault();
+
+// getting values from form inputs
+
+      var firstNameVal = firstName.value,
+          lastNameVal = lastName.value,
+          emailVal = email.value,
+          postalCodeVal = postalCode.value,
+          phoneVal = phone.value,
+          cardVal = card.value,
+          passVal = pass.value;
+
+// checking if email adress has '.' and '@'
+
+      var emailHasDot = emailVal.split('.'),
+          emailHasAt = emailVal.split('@');
+
+// i know that this is not the best practice to use so many IFs, but this time it just has to work:)
+
+      if ( firstNameVal.length <= 1 ) {
+        alert('Name has to contain at least 2 letters');
+      } else if ( lastNameVal <= 1 ) {
+        alert('Surname has to contain at least 2 letters');
+      } else if ( emailHasAt[1] == undefined ) {
+        alert('Your email address is inproperly');
+      } else if ( emailHasDot[1] == undefined ) {
+        alert('Your email address is inproperly');
+      } else if ( postalCodeVal.length < 5 ) {
+        alert('Your postal code has to contain 5 characters');
+      } else if ( phoneVal.length < 10 ) {
+        alert('Your phone number has to contain 10 characters');
+      } else if ( cardVal.length < 16 ) {
+        alert('Your card number has to contain 16 digits');
+      } else if ( passVal.length < 3 ) {
+        alert('Enter your 3 digit card security code');
+      } else ( alert('Your submission is completed'))
+    })
+  }
+
+  formValidate();
+
+  bacon();
+
   // Your custom JavaScript goes here
 })();
