@@ -1,6 +1,6 @@
 # Snowdog Front-end Recruitment test
 
-Test is based on [Google Web Starter Kit](https://github.com/google/web-starter-kit) v0.6.1
+Test is based on [Google Web Starter Kit](https://github.com/google/web-starter-kit) v0.6.5
 
 ### Task 1
 Fork this repository. Remember to commit changes after every task (if necessary).
@@ -14,7 +14,7 @@ Add [this repo](https://github.com/SnowdogApps/front-end-recruitment-test-submod
 Now you should write JS to clone bacon image and attach this action to **Yeah, I want more bacon!** button.
 
 ### Task 4
-Back to main repo and add another tab - **Checkout**. Project is in `/projects/checkout.png` - make this tab as similar to project as you can. Use SASS to write your styles.
+Back to main repo and add another tab - **Checkout**. Project is in `/projects/checkout.png` - make this tab as similar to project as you can. Use SCSS to write your styles.
 
 ### Task 5
 Add simple JS validation to checkout form created earlier. Remember to show success/error message on form submit.
