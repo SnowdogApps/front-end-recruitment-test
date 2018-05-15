@@ -19,6 +19,6 @@ Back to main repo and add another tab - **Checkout**. Project is in `/projects/c
 ### Task 5
 Add simple JS validation to checkout form created earlier. Remember to show success/error message on form submit.
 
---
+---
 
 After finishing all tasks send us your CV and link to repository at jobs@snow.dog, then wait for answer. Bye!
