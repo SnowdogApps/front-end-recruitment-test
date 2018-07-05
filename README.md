@@ -21,4 +21,8 @@ Add simple JS validation to checkout form created earlier. Remember to show succ
 
 ---
 
+We are not answering any questions about this test. Eveyrone needs to work with same input informations, to let us fairly judge your work.
+
+---
+
 After finishing all tasks send us your CV and link to repository at jobs@snow.dog, then wait for answer. Bye!
