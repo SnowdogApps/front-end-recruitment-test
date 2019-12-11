@@ -15,7 +15,7 @@ Follow [installation instructions](https://github.com/google/web-starter-kit/blo
 ---
 
 ### Task 1
-Add [this repo](https://github.com/SnowdogApps/front-end-recruitment-test-submodule) as submodule at `/submodule` folder, then run gulp task `submodule` to add symlink. 
+Add [this repo](https://github.com/SnowdogApps/front-end-recruitment-test-submodule) as submodule at `/submodule` folder, then run gulp task `submodule` to add symlink.
 
 [Here](http://localhost:3000/submodule.html) you should see a beautiful page with slices of fried bacon.
 
@@ -30,7 +30,3 @@ Use SCSS to write your styles.
 Add simple JS validation to checkout form created earlier.
 
 Remember to show success/error message on form submit.
-
----
-
-After finishing all tasks, send us your CV and link to the repository at jobs@snow.dog, then wait for an answer. Bye!
