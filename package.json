@@ -29,7 +29,7 @@
     "sw-toolbox": "^3.6.0"
   },
   "engines": {
-    "node": ">=10"
+    "node": ">=10 <11"
   },
   "private": true,
   "scripts": {
