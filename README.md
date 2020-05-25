@@ -8,6 +8,8 @@
 ## Before you start
 Fork this repository, it needs to stay on Github, available for everyone.
 
+Install dependencies and run `dev` script.
+
 You should end with a working test page on http://localhost:1234.
 
 ---
