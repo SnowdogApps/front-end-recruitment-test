@@ -8,25 +8,12 @@
 ## Before you start
 Fork this repository, it needs to stay on Github, available for everyone.
 
-The test is based on [Google Web Starter Kit](https://github.com/google/web-starter-kit) v0.6.5
-
-Install the local dependencies:
-```sh
-$ npm install
-```
-
-Run app:
-```sh
-$ npm run dev
-```
-Note: if you have the Yarn package manager installed, you can just run yarn. Web Starter Kit includes a yarn.lock file that will be used here.
-
-You should end with a working test page on http://localhost:1234/index.html.
+You should end with a working test page on http://localhost:1234.
 
 ---
 
 ### Task 1
-Add [this repo](https://github.com/SnowdogApps/front-end-recruitment-test-submodule) as submodule at `/submodule` folder, then run `npm run submodule` to add symlink.
+Add [this repo](https://github.com/SnowdogApps/front-end-recruitment-test-submodule) as submodule at `/app` folder.
 
 [Here](http://localhost:1234/submodule.html) you should see a beautiful page with slices of fried bacon.
 

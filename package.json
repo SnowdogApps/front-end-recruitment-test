@@ -1,7 +1,7 @@
 {
   "scripts": {
     "submodule": "node plugins/submodule.js",
-    "dev": "parcel app/**/*.html"
+    "dev": "parcel app/index.html"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
