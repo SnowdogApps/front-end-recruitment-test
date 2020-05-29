@@ -17,7 +17,7 @@ You should end with a working test page on http://localhost:1234.
 ---
 
 ### Task 1
-Add JS to clone [bacon image](http://localhost:1234/#submodule) and attach this action to **Yeah, I want more bacon!** button.
+Add JS to clone bacon image in submodule tab and attach this action to **Yeah, I want more bacon!** button.
 
 ### Task 2
 Add tab **Checkout** that reflects design from `/projects/checkout.png`.
