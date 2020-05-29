@@ -8,6 +8,8 @@
 ## Before you start
 Fork this repository, it needs to stay on Github, available for everyone.
 
+Add [this repo](https://github.com/SnowdogApps/front-end-recruitment-test-submodule) as submodule at `/submodule` folder.
+
 Install dependencies and run `dev` script.
 
 You should end with a working test page on http://localhost:1234.
@@ -15,11 +17,7 @@ You should end with a working test page on http://localhost:1234.
 ---
 
 ### Task 1
-Add [this repo](https://github.com/SnowdogApps/front-end-recruitment-test-submodule) as submodule at `/app` folder.
-
-[Here](http://localhost:1234/submodule.html) you should see a beautiful page with slices of fried bacon.
-
-Add JS to clone bacon image and attach this action to **Yeah, I want more bacon!** button.
+Add JS to clone bacon image in submodule tab and attach this action to **Yeah, I want more bacon!** button.
 
 ### Task 2
 Add tab **Checkout** that reflects design from `/projects/checkout.png`.
