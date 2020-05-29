@@ -1,6 +1,5 @@
 {
   "scripts": {
-    "submodule": "node plugins/submodule.js",
     "dev": "parcel app/index.html"
   },
   "devDependencies": {
