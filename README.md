@@ -1,9 +1,9 @@
 # Snowdog Front-end Recruitment test
 
-## Rules
-* Please do not use fake Github accounts, we want to check your contributions history since we do a lot in open source.
+* Please do not use fake Github accounts, we want to check your contributions history since we use and create open source.
 * Remember to commit changes after every task.
 * We are not answering any questions about this test. Everyone work with the same set of information, to let us fairly judge your work.
+* If you think that some part of this test is weirdly old-fashioned or not described precisely, there is a very high chance it's done on purpose, because we want to test you in a way worse environment than you will work on a daily basis.
 
 ## Before you start
 Fork this repository, it needs to stay on Github, available for everyone.
@@ -27,6 +27,4 @@ Add tab **Checkout** that reflects design from `/projects/checkout.png`.
 Use SCSS to write your styles.
 
 ### Task 3
-Add simple JS validation to checkout form created earlier.
-
-Remember to show success/error message on form submit.
+Add simple JS validation to checkout form created earlier and show success/error message on form submit.
