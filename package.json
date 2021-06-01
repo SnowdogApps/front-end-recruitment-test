@@ -1,10 +1,10 @@
 {
-  "name": "front-end-recruitment-test",
+  "name": "@snowdog/front-end-recruitment-test",
   "version": "1.0.0",
   "private": true,
   "scripts": {
     "build": "node ace build --production",
-    "start": "node server.js",
+    "start": "node build/server.js",
     "dev": "node ace serve --watch",
     "lint": "eslint . --ext=.ts"
   },
