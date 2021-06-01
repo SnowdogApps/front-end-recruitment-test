@@ -20,6 +20,20 @@
 
 import Route from '@ioc:Adonis/Core/Route'
 
+const state = {
+  cart: {
+    items: [
+      { name: 'Apple Watch Sport', price: 580 },
+      { name: 'Modern Buckle', price: 380 },
+    ],
+    totals: {
+      suoTotal: 960,
+      tax: 0,
+      grandToal: 960,
+    },
+  },
+}
+
 Route.get('/', async ({ view }) => {
-  return view.render('index')
+  return view.render('index', state)
 })
