@@ -9,7 +9,7 @@ Fork this repository, it needs to stay on Github, publicly available.
 
 The test is based on [AdonisJS](https://adonisjs.com/) a full stack Node.js framework.
 
-After running a `dev` script, you should see a start page on http://localhost:3333.
+After running a `npm run dev`, you should see a start page on http://localhost:3333.
 
 ---
 
