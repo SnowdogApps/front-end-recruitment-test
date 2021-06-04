@@ -61,7 +61,8 @@ Route.post('/order', async ({ request, response }) => {
   })
 
   try {
-    const body = await request.validate({ schema: orderSchema })
+    await request.validate({ schema: orderSchema })
+
     response.send({
       message: 'Order successfully placed.',
     })
