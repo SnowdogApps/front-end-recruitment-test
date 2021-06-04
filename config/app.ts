@@ -259,8 +259,8 @@ export const assets: AssetsManagerConfig = {
   */
   script: {
     attributes: {
-      defer: true
-    }
+      defer: true,
+    },
   },
 
   /*
@@ -272,6 +272,6 @@ export const assets: AssetsManagerConfig = {
   |
   */
   style: {
-    attributes: {}
-  }
+    attributes: {},
+  },
 }
