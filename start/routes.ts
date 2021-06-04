@@ -39,6 +39,10 @@ Route.get('/', async ({ view }) => {
   return view.render('index', state)
 })
 
+Route.get('/bacon', async ({ view }) => {
+  return view.render('bacon')
+})
+
 Route.post('/order', async ({ request, response }) => {
   const orderSchema = schema.create({
     firstName: schema.string(),
