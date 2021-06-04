@@ -19,9 +19,10 @@ On [/bacon](http://localhost:3333/bacon) you should see a page with beautiful sl
 Create bacon cloning logic and attach it to **Yeah, I want more bacon!** button.
 
 ### Task 2
-Take a look at [design file](./design.png) and recreate it. Use any way of writing styles you are comfortable with.
+Take a look at [design file](./design.png) and recreate it. Use any way of writing styles you are comfortable with and pick `Roboto` as the font family.
 
 By default, Adonis support [PostCSS](https://docs.adonisjs.com/guides/assets-manager#setup-postcss), [SASS, Less and Stylus](https://docs.adonisjs.com/guides/assets-manager#setup-sass-less-and-stylus) you need to enable one of it, but it's just Webpack under the hood, so feel free to hook whatever you like the most.
+
 
 ### Task 3
 Add JS validation to the checkout form created earlier.
