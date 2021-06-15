@@ -58,6 +58,10 @@ main ul {
   list-style: none;
 }
 
+main img {
+  max-width: 100%;
+}
+
 main li {
   margin-bottom: 5px;
   position: relative;
