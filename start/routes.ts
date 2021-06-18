@@ -54,6 +54,10 @@ Route.post('/order', async ({ request, response }) => {
     email: schema.string({}, [
       rules.email(),
     ]),
+    country: schema.string(),
+    postalCode: schema.string({}, [
+      rules.regex(new RegExp('^[0-9]{5}$')),
+    ]),
     phone: schema.string({}, [
       rules.mobile(),
     ]),

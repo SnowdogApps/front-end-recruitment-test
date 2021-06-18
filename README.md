@@ -23,7 +23,6 @@ Take a look at [design file](./design.png) and recreate it. Use any way of writi
 
 By default, Adonis support [PostCSS](https://docs.adonisjs.com/guides/assets-manager#setup-postcss), [SASS, Less and Stylus](https://docs.adonisjs.com/guides/assets-manager#setup-sass-less-and-stylus) you need to enable one of it, but it's just Webpack under the hood, so feel free to hook whatever you like the most.
 
-
 ### Task 3
 Add JS validation to the checkout form created earlier.
 
