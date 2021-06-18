@@ -37,9 +37,9 @@ Route.get('/checkout', async ({ view }) => {
         { name: 'Modern Buckle', price: 380 },
       ],
       totals: {
-        suoTotal: 960,
+        subTotal: 960,
         tax: 0,
-        grandToal: 960,
+        grandTotal: 960,
       },
     },
   }
