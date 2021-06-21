@@ -2,7 +2,7 @@
 
 * Please do not use fake Github accounts, we want to check your contributions history since we use and create open source.
 * We are not answering any questions about this test. Everyone work with the same set of information, to let us fairly judge your work.
-* If you think that some part of this test is weirdly old-fashioned or not described precisely, there is a very high chance it's on purpose, because we want to test you in a way worse environment than you will work on a daily basis.
+* The test is designed in a way, that can confuse you or seems weird, because we want to test you in a way worse environment than you will work on a daily basis. It's also not a representation of the tech stack we are using in real projects.
 
 ## Before you start
 Fork this repository, it needs to stay on Github, publicly available.
