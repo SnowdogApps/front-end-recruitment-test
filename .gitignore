@@ -1,5 +1,8 @@
-.DS_Store
 node_modules
-dist
-.tmp
-app.yaml
+build
+coverage
+.vscode
+.DS_STORE
+.DS_Store
+tmp
+public/assets

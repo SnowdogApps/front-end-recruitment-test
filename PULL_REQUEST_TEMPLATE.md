@@ -1,3 +1,1 @@
-WE ARE NOT ACCEPTING PULL REQUESTS
-
-Please read task instructions one more time.
+We are not accepting pull requests, please read task instructions one more time.
