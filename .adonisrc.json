@@ -1,7 +1,16 @@
 {
   "typescript": true,
+  "directories": {
+    "config": "backend/config",
+    "public": "frontend/public",
+    "contracts": "backend/contracts",
+    "providers": "backend/providers",
+    "resources": "frontend/assets",
+    "views": "frontend/views",
+    "start": "backend/start"
+  },
   "commands": [
-    "./commands",
+    "./backend/commands",
     "@adonisjs/core/build/commands",
     "@adonisjs/repl/build/commands"
   ],
@@ -13,12 +22,12 @@
     "Contracts": "contracts"
   },
   "preloads": [
-    "./start/plugins",
-    "./start/routes",
-    "./start/kernel"
+    "./backend/start/plugins",
+    "./backend/start/routes",
+    "./backend/start/kernel"
   ],
   "providers": [
-    "./providers/AppProvider",
+    "./backend/providers/AppProvider",
     "@adonisjs/core",
     "@adonisjs/session",
     "@adonisjs/view",
@@ -26,11 +35,11 @@
   ],
   "metaFiles": [
     {
-      "pattern": "public/**",
+      "pattern": "frontend/public/**",
       "reloadServer": false
     },
     {
-      "pattern": "resources/views/**/*.edge",
+      "pattern": "frontend/views/**/*.edge",
       "reloadServer": false
     }
   ],
