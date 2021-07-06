@@ -6,8 +6,8 @@
 
 ## Before you start
 * Fork this repository, it needs to stay on Github, publicly available.
-* The test is based on [AdonisJS](https://adonisjs.com/) a full stack Node.js framework, but you don't need to write any backend stuff, nor have any experience with Adonis or other simillar framework.
-* After installing the dependencies and running `npm run dev`, you should see a start page on http://localhost:3333.
+* The test is based on [AdonisJS](https://adonisjs.com/) a full stack Node.js framework, but you don't need to write any backend stuff, nor have any experience with Adonis or other similar framework.
+* After installing the dependencies and running `npm run dev`, you should see a start page on http://localhost:3333. If something is wrong, you probably use a wrong version of Node.js.
 
 ---
 
