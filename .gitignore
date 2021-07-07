@@ -5,4 +5,4 @@ coverage
 .DS_STORE
 .DS_Store
 tmp
-public/assets
+/frontend/public/assets
