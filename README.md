@@ -11,23 +11,14 @@
 
 ---
 
-### Task 1
-On [/bacon](http://localhost:3333/bacon) you should see a page with beautiful slices of fried bacon, that comes from external source.
+### Task
+Take a look at [design file](./design.png). Please recreate checkout form and provide simple JS validation. Validated form data send to the `POST /order` endpoint and show success / error message based on API response.
 
-Create bacon cloning logic and attach it to **Yeah, I want more bacon!** button.
-
-### Task 2
-Take a look at [design file](./design.png) and recreate it. Use any way of writing styles you are comfortable with and pick `Roboto` as the font family.
+Use any way of writing styles you are comfortable with and pick `Roboto` as the font family.
 
 By default Adonis support [PostCSS](https://docs.adonisjs.com/guides/assets-manager#setup-postcss), [SASS, Less and Stylus](https://docs.adonisjs.com/guides/assets-manager#setup-sass-less-and-stylus) you need to enable one of it, but it's just Webpack under the hood, so feel free to hook whatever you like the most.
 
-### Task 3
-Provide simple JS validation for checkout form created earlier.
-
-### Task 4
-Send form data to the `POST /order` endpoint and show success / error message based on API response.
-
-Accepted data formats:
+Endpoint accepted data formats:
 * Postal code: 00000
 * Phone number: 000000000
 * Credit card: 0000000000000000
