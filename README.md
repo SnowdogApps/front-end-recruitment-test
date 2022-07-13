@@ -20,9 +20,7 @@ Take a look at [design](https://www.figma.com/file/ppND0SVAQm1A7H39jABzSp/Front-
 
 ### Hints
 * Use any way of writing styles you are comfortable with.
-
 * By default Adonis support [PostCSS](https://docs.adonisjs.com/guides/assets-manager#setup-postcss), [SASS, Less and Stylus](https://docs.adonisjs.com/guides/assets-manager#setup-sass-less-and-stylus) you need to enable one of it, but it's just Webpack under the hood, so feel free to hook whatever you like the most.
-
 * Endpoint accepted data formats:
   * Postal code: 00000
   * Phone number: 000000000
