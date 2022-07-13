@@ -17,16 +17,18 @@ Take a look at [design](https://www.figma.com/file/ppND0SVAQm1A7H39jABzSp/Front-
 * Please recreate checkout form and provide Your own JS validation.
 * Validated form data send to the `POST /order` endpoint and show success / error message based on REST API response.
 
-Use any way of writing styles you are comfortable with and pick `Roboto` as the font family.
 
-By default Adonis support [PostCSS](https://docs.adonisjs.com/guides/assets-manager#setup-postcss), [SASS, Less and Stylus](https://docs.adonisjs.com/guides/assets-manager#setup-sass-less-and-stylus) you need to enable one of it, but it's just Webpack under the hood, so feel free to hook whatever you like the most.
+### Hints
+* Use any way of writing styles you are comfortable with.
 
-Endpoint accepted data formats:
-* Postal code: 00000
-* Phone number: 000000000
-* Credit card: 0000000000000000
-* CVV: 000
-* Exp. date: 00/00
+* By default Adonis support [PostCSS](https://docs.adonisjs.com/guides/assets-manager#setup-postcss), [SASS, Less and Stylus](https://docs.adonisjs.com/guides/assets-manager#setup-sass-less-and-stylus) you need to enable one of it, but it's just Webpack under the hood, so feel free to hook whatever you like the most.
+
+* Endpoint accepted data formats:
+  * Postal code: 00000
+  * Phone number: 000000000
+  * Credit card: 0000000000000000
+  * CVV: 000
+  * Exp. date: 00/00
 
 
 ---
