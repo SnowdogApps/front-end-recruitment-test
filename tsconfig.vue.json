@@ -1,0 +1,20 @@
+{
+  "include": ["./frontend/app/**/*"],
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./frontend/app"]
+    },
+    "strict": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "target": "ESNext",
+    "jsx": "preserve",
+    "lib": ["DOM", "ESNext"],
+    "useDefineForClassFields": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "noEmit": false,
+  }
+}

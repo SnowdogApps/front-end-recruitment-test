@@ -45,7 +45,7 @@ Encore.setPublicPath('/assets')
 | entrypoints.
 |
 */
-Encore.addEntry('app', './frontend/assets/js/app.js')
+Encore.addEntry('app', './frontend/app/app.ts')
 
 /*
 |--------------------------------------------------------------------------
@@ -156,7 +156,7 @@ Encore.configureDevServerOptions((options) => {
 | favorite CSS precompiler
 |
 */
-// Encore.enableSassLoader()
+Encore.enableSassLoader()
 // Encore.enableLessLoader()
 // Encore.enableStylusLoader()
 
@@ -181,11 +181,18 @@ Encore.configureDevServerOptions((options) => {
 | sure to install the required dependencies.
 |
 */
-// Encore.enableVueLoader(() => {}, {
-//   version: 3,
-//   runtimeCompilerBuild: false,
-//   useJsx: false
-// })
+Encore.enableVueLoader(() => {}, {
+  version: 3,
+  runtimeCompilerBuild: false,
+  useJsx: false
+}).enableTypeScriptLoader((config) => {
+  config.configFile = "tsconfig.vue.json";
+}).addAliases({
+  "@": join(__dirname, "frontend/app"),
+}).configureDefinePlugin((options) => {
+  options["__VUE_OPTIONS_API__"] = true;
+  options["__VUE_PROD_DEVTOOLS__"] = false;
+})
 
 /*
 |--------------------------------------------------------------------------
