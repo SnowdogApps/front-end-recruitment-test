@@ -1,20 +1,20 @@
 <template>
   <div class="form-block">
-    <h2>{{ title }}</h2>
     <form class="form">
+      <Title :text="'Personal Information'" :counter="1" />
       <input type="text">
+      
+      <Title :text="'Payments Details'" :counter="2" :icon="'lock'" />
     </form>
   </div>
 </template>
 
 <script>
+  import Title from '@/components/Title.vue'
+
   export default {
     name: 'Form',
-    data() {
-      return {
-        title: 'Form Title',
-      }
-    }
+    components: { Title },
   }
 </script>
 
