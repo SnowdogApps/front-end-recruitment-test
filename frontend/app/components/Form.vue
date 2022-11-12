@@ -3,7 +3,7 @@
     <form class="form">
       <Title :text="'Personal Information'" :counter="1" />
       <input type="text">
-      
+
       <Title :text="'Payments Details'" :counter="2" :icon="'lock'" />
     </form>
   </div>
@@ -17,6 +17,3 @@
     components: { Title },
   }
 </script>
-
-<style>
-</style>
