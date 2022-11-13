@@ -1,21 +1,22 @@
 <template>
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    :width="width"
-    :height="height"
-    :viewBox="viewbox"
-    class="icon"
-  >
-    <path
-      v-for="(item, index) in paths"
-      :key="index"
-      :d="item.path"
-      :fill-rule="item.fillRule"
-      :clip-rule="item.clipRule"
-      :fill="item.fill"
+  <span class="icon">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      :width="width"
+      :height="height"
+      :viewBox="viewbox"
     >
-    </path>
-  </svg>
+      <path
+        v-for="(item, index) in paths"
+        :key="index"
+        :d="item.path"
+        :fill-rule="item.fillRule"
+        :clip-rule="item.clipRule"
+        :fill="item.fill"
+      >
+      </path>
+    </svg>
+  </span>
 </template>
 
 <script>
@@ -145,3 +146,11 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+  .icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>

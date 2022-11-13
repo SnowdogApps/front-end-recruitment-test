@@ -16,7 +16,6 @@
   $horizontal-gap: 24px;
   .wrapper {
     margin: 0 auto;
-    width: 100%;
     max-width: $wrapper-width;
     padding-left: $horizontal-gap;
     padding-right: $horizontal-gap;
