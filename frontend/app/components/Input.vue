@@ -1,11 +1,13 @@
 <template>
-  <div class="input-box">
-    <label class="input-label">{{ label }}</label>
-    <input class="input" :class="{ 'has-icon': icon, 'has-tooltip': tooltip }" :type="type" :value="modelValue" :placeholder="placeholder" :label="label" @input="$emit('update:modelValue', $event.target.value)">
-    <div class="input-icons" v-if="icon || tooltip">
-      <Icon v-if="icon" :name="icon" />
-      <Tooltip v-if="tooltip" :tooltipText="tooltipText" :tooltipIcon="tooltipIcon" :tooltipPosition="tooltipPosition" />
-    </div>
+  <div class="input-block">
+    <label class="input-box">
+      <span class="input-label">{{ label }}</span>
+      <input class="input" :class="{ 'has-icon': icon, 'has-tooltip': tooltip }" :type="type" :value="modelValue" :placeholder="placeholder" :label="label" @input="$emit('update:modelValue', $event.target.value)">
+      <div class="input-icons" v-if="icon || tooltip">
+        <Icon v-if="icon" :name="icon" />
+        <Tooltip v-if="tooltip" :tooltipText="tooltipText" :tooltipIcon="tooltipIcon" :tooltipPosition="tooltipPosition" />
+      </div>
+    </label>
   </div>
 </template>
 
@@ -77,7 +79,6 @@
   $input-icon-color: #6C7689;
   $input-icon-width: 24px;
   $input-icon-height: $input-icon-width;
-  $input-icon-left-gap: 12px;
   $input-icons-gap: 5px;
 
   .input {
@@ -93,6 +94,7 @@
     line-height: 24px;
     font-weight: 400;
     color: #000;
+    width: 100%;
     ::placeholder {
       color: #3A4351;
     }
@@ -104,10 +106,9 @@
     }
 
     &-box {
-      display: inline-flex;
+      display: flex;
       align-items: center;
       position: relative;
-      justify-content: center;
   
       .icon {
         color: $input-icon-color;
@@ -132,19 +133,15 @@
     &-icons {
       display: flex;
       align-items: center;
+      position: absolute;
+      right: $input-padding-right;
     }
     &.has-icon,
     &.has-tooltip {
-      padding-right: $input-padding-right + $input-icon-width + $input-icon-left-gap;
-      & + .input-icons {
-        margin-left: -($input-icon-width + $input-padding-right);
-      }
+      padding-right: $input-padding-left + $input-padding-right + $input-icon-width;
     }
     &.has-icon.has-tooltip {
-      padding-right: $input-padding-right + ($input-icon-width * 2 + $input-icons-gap) + $input-icon-left-gap;
-      & + .input-icons {
-        margin-left: -($input-icon-width * 2 + $input-icons-gap + $input-padding-right);
-      }
+      padding-right: $input-padding-left + $input-padding-right + ($input-icon-width * 2 + $input-icons-gap);
     }
   }
 </style>
