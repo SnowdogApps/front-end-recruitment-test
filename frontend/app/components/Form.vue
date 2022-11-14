@@ -42,7 +42,7 @@
             <div class="form-col w-100">
               <div class="form-box">
                 <div class="form-col w-100">
-                  <Input :type="'text'" v-model="form.email" :placeholder="'000-0-00-0000-0000'" :label="'Credit Card Number'" :icon="'visa'" />
+                  <Input :type="'text'" v-model="form.cardNumber" :placeholder="'000-0-00-0000-0000'" :label="'Credit Card Number'" :icon="'visa'" />
                 </div>
               </div>
               <div class="form-box">
@@ -98,6 +98,7 @@
           surname: '',
           email: '',
           postalCode: '',
+          cardNumber: '',
           phoneNumber: '',
           cvvCode: '',
         }
