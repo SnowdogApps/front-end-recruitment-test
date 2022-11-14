@@ -68,7 +68,6 @@
   // input and label height
   $input-height: 48px;
   $input-label-line-height: 16px;
-  $input-current-height: $input-height - $input-border-width * 2 - $input-label-line-height;
 
   // input paddings
   $input-padding-left: 16px;
@@ -86,17 +85,16 @@
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.04);
     border: $input-border-width solid transparent;
     border-radius: $input-border-radius;
-    height: $input-current-height;
+    height: $input-height;
     padding-top: $input-padding-top;
     padding-left: $input-padding-left;
     padding-right: $input-padding-right;
     font-size: 14px;
     line-height: 24px;
     font-weight: 400;
-    color: #000;
     width: 100%;
-    ::placeholder {
-      color: #3A4351;
+    &, &::placeholder {
+      color: #000;
     }
 
     &:focus {

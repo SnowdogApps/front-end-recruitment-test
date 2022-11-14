@@ -1,5 +1,5 @@
 <template>
-  <div class="title-block">
+  <div class="title-box">
     <span class="title-counter">{{ counter }}</span>
     <h2 class="title">{{ text }}</h2>
     <Icon v-if="icon" :name="icon" />
@@ -36,6 +36,7 @@
 
   $counter-width: 24px;
   $counter-height: $counter-width;
+  $counter-gap: 8px;
 
   .title {
     font-size: $font-size;
@@ -46,10 +47,11 @@
     @media (min-width: 768px) {
       font-size: $font-size-desktop;
     }
-    &-block {
+    &-box {
       display: flex;
       align-items: center;
       margin-bottom: 16px;
+      height: 24px;
       .icon {
         margin-left: 10px;
       }
@@ -63,9 +65,12 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-right: 8px;
+      margin-right: $counter-gap;
       width: $counter-width;
       height: $counter-height;
+      @media (min-width: 1200px) {
+        margin-left: -($counter-width + $counter-gap);
+      }
     }
   }
 

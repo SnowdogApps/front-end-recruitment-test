@@ -14,6 +14,6 @@
   }
 </script>
 
-<style>
-  @import "../assets/css/app.css";
+<style lang="scss">
+  @import "../assets/css/app.scss";
 </style>

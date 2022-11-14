@@ -4,7 +4,6 @@
     <div class="tooltip-box" :class="{ 'tooltip-right': tooltipPosition == 'right', 'tooltip-center': tooltipPosition == 'center' }">
       <div class="tooltip-text">
         {{ tooltipText }}
-        {{ tooltipPosition }}
       </div>
     </div>
   </div>
