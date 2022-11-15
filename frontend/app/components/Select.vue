@@ -123,7 +123,7 @@ export default {
         height: 35px;
         line-height: 35px;
         &:hover {
-          background-color: #B9B9B9;
+          background-color: #e3e3e3;
         }
       }
     }

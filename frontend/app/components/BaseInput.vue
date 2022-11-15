@@ -1,13 +1,14 @@
 <template>
-  <div class="input-block">
+  <div class="input-block" :class="{'is-invalid': this.error}">
     <label class="input-box">
       <span class="input-label">{{ label }}</span>
-      <input class="input" :class="{ 'has-icon': icon, 'has-tooltip': tooltip }" :type="type" :value="modelValue" :placeholder="placeholder" :label="label" @input="$emit('update:modelValue', $event.target.value)">
+      <input :type="type" :value="modelValue" :isValid="isValid" :placeholder="placeholder" :label="label" class="input" :class="{ 'has-icon': icon, 'has-tooltip': tooltip }" @input="updateValue($event.target.value)">
       <div class="input-icons" v-if="icon || tooltip">
         <Icon v-if="icon" :name="icon" />
         <Tooltip v-if="tooltip" :tooltipText="tooltipText" :tooltipIcon="tooltipIcon" :tooltipPosition="tooltipPosition" />
       </div>
     </label>
+    <span class="error" v-if="this.error">{{ this.error }}</span>
   </div>
 </template>
 
@@ -16,8 +17,13 @@
   import Tooltip from '@/components/Tooltip.vue'
 
   export default {
-    name: 'Input',
+    name: 'BaseInput',
     components: { Icon, Tooltip },
+    data() {
+      return {
+        error: '',
+      }
+    },
     props: {
       type: {
         type: String,
@@ -34,9 +40,14 @@
         type: String,
         default: "right",
       },
+      validation: Boolean,
+      isValid: Boolean,
     },
-    emits: ['update:modelValue'],
+    emits: ['update:modelValue', 'update:isValid'],
     methods: {
+      updateValue(value) {
+        this.$emit('update:modelValue', value);
+      },
       validateTooltipProps() {
         if (this.tooltip) {
           if (!this.tooltipText) {
@@ -46,6 +57,16 @@
             console.error('Tooltip icon name should not be empty');
           }
         }
+      },
+      validate() {
+        if (this.validation) {
+          if (this.modelValue === "") {
+            this.error = "This field is required";
+          } else {
+            this.error = "";
+          }
+        }
+        return;
       }
     },
     watch: {
@@ -54,7 +75,7 @@
         handler() {
           this.validateTooltipProps();
         }
-      }
+      },
     }
   }
 </script>
@@ -80,6 +101,7 @@
   $input-icon-height: $input-icon-width;
   $input-icons-gap: 5px;
 
+  $error-color: #E0535E;
   .input {
     background: $input-bg-color;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.04);
@@ -101,6 +123,24 @@
       outline: 0;
       box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.08);
       border-color: #B9B9B9;
+    }
+
+    &-block {
+      &.is-invalid {
+        .input {
+          border-color: $error-color;
+          &::placeholder,
+          &-label {
+            color: $error-color;
+          }
+        }
+        
+        .error {
+          font-size: 12px;
+          padding-top: 5px;
+          color: $error-color;
+        }
+      }
     }
 
     &-box {
