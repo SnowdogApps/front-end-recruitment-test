@@ -1,14 +1,23 @@
 <template>
-  <div class="input-block" :class="{'is-invalid': this.error}">
+  <div class="input-block" :class="{'is-invalid': isSubmitted && this.error}">
     <label class="input-box">
       <span class="input-label">{{ label }}</span>
-      <input :type="type" :value="modelValue" :isValid="isValid" :placeholder="placeholder" :label="label" class="input" :class="{ 'has-icon': icon, 'has-tooltip': tooltip }" @input="updateValue($event.target.value)">
+      <input
+        type="text"
+        :value="modelValue"
+        :isValid="isValid"
+        :placeholder="placeholder"
+        :label="label"
+        class="input"
+        :class="{ 'has-icon': icon, 'has-tooltip': tooltip }"
+        @input="onInput($event.target.value)"
+      >
       <div class="input-icons" v-if="icon || tooltip">
         <Icon v-if="icon" :name="icon" />
         <Tooltip v-if="tooltip" :tooltipText="tooltipText" :tooltipIcon="tooltipIcon" :tooltipPosition="tooltipPosition" />
       </div>
     </label>
-    <span class="error" v-if="this.error">{{ this.error }}</span>
+    <span class="error" v-if="isSubmitted && this.error">{{ this.error }}</span>
   </div>
 </template>
 
@@ -21,14 +30,10 @@
     components: { Icon, Tooltip },
     data() {
       return {
-        error: '',
-      }
+        error: "This field is required",
+      };
     },
     props: {
-      type: {
-        type: String,
-        required: true,
-      },
       modelValue: String,
       placeholder: String,
       label: String,
@@ -40,13 +45,23 @@
         type: String,
         default: "right",
       },
-      validation: Boolean,
+      validation: {
+        type: Object,
+        default: () => ({
+          required: Boolean,
+          type: String,
+        }),
+      },
       isValid: Boolean,
+      isSubmitted: Boolean,
+      regex: String,
     },
     emits: ['update:modelValue', 'update:isValid'],
     methods: {
-      updateValue(value) {
-        this.$emit('update:modelValue', value);
+      onInput(value) {
+        const isValid = this.checkValid(value);
+        this.$emit("update:modelValue", value);
+        this.$emit("update:isValid", isValid);
       },
       validateTooltipProps() {
         if (this.tooltip) {
@@ -58,16 +73,31 @@
           }
         }
       },
-      validate() {
-        if (this.validation) {
-          if (this.modelValue === "") {
-            this.error = "This field is required";
-          } else {
-            this.error = "";
-          }
+      checkValid(value) {
+        const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        const postalCodeRegex = /^[0-9]{5}$/;
+
+        if (this.validation.required && value === "") {
+          this.error = "This field is required";
+          return false;
         }
-        return;
-      }
+        if (this.validation.required && this.validation?.type === "" && value.length < 3) {
+          this.error = "The field should have at least 3 characters";
+          return false;
+        }
+        if (this.validation.type === "email" && !emailRegex.test(value)) {
+          this.error = "Please enter a valid email address";
+          return false;
+        }
+
+        if (this.validation.type === "postalCode" && !postalCodeRegex.test(value)) {
+          this.error = "Please enter a valid post code that contain 5 digits";
+          return false;
+        }
+
+        this.error = "";
+        return true;
+      },
     },
     watch: {
       $props: {
@@ -134,7 +164,7 @@
             color: $error-color;
           }
         }
-        
+
         .error {
           font-size: 12px;
           padding-top: 5px;
@@ -147,7 +177,7 @@
       display: flex;
       align-items: center;
       position: relative;
-  
+
       .icon {
         color: $input-icon-color;
         width: $input-icon-width;

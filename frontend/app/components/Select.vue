@@ -6,15 +6,15 @@
     </div>
     <div class="items" :class="{ 'select-hide': !open }">
       <div
-        v-for="(option, i) of options"
-        :key="i"
+        v-for="option in options"
+        :key="option.id"
         @click="
-          selected = option;
+          selected = option.name;
           open = false;
-          $emit('input', option);
+          $emit('input', option.name);
         "
       >
-        {{ option }}
+        {{ option.name }}
       </div>
     </div>
   </div>
