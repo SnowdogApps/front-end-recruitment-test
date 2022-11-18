@@ -137,8 +137,10 @@
 </script>
 
 <style lang="scss">
-  // input colors
+  // input background-color
   $input-bg-color: #fff;
+
+  // input border settings
   $input-border-width: 1px;
   $input-border-radius: 4px;
 
@@ -158,6 +160,7 @@
   $input-icons-gap: 5px;
 
   $error-color: #E0535E;
+  
   .input {
     background: $input-bg-color;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.04);

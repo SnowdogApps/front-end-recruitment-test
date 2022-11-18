@@ -25,6 +25,10 @@ a {
   margin-bottom: 0;
 }
 
+.pt-32 {
+  padding-top: 32px;
+}
+
 .pt-40 {
   padding-top: 40px;
 }
@@ -59,4 +63,11 @@ a {
       width: 100%;
     }
   }
+}
+
+.border-top-1 {
+  border-top: 1px solid;
+}
+.border-black {
+  border-color: #000;
 }

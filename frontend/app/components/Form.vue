@@ -55,6 +55,13 @@
             </div>
           </div>
         </div>
+        <div class="form-block pt-32 border-top-1 border-black" v-if="!isDesktop">
+          <div class="form-box">
+            <div class="form-col w-100 mb-0">
+              <OrderCard/>
+            </div>
+          </div>
+        </div>
         <div class="form-block mb-0">
           <div class="form-box">
             <div class="form-col w-100 mb-0">
@@ -63,18 +70,8 @@
           </div>
         </div>
       </div>
-      <div class="form-col pt-40 w-100 tablet-w-33">
-        YOUR ORDER
-        <br>
-        Apple Watch Sport $ 580
-        <br>
-        Total Modern Buckle $ 380
-        <br><br>
-        Total purchases $ 960.00
-        <br>
-        Estimated tax $ 0
-        <br><br>
-        Total $ 960
+      <div class="form-col pt-40 w-100 tablet-w-33" v-if="isDesktop">
+        <OrderCard/>
       </div>
     </div>
   </form>
@@ -85,10 +82,11 @@
   import BaseInput from '@/components/BaseInput.vue'
   import Button from '@/components/Button.vue'
   import Select from '@/components/Select.vue'
+  import OrderCard from '@/components/OrderCard.vue'
 
   export default {
     name: 'Form',
-    components: { Title, BaseInput, Button, Select },
+    components: { Title, BaseInput, Button, Select, OrderCard },
 
     data() {
       return {
@@ -128,6 +126,7 @@
           },
         },
         isSubmitted: false,
+        isDesktop: false,
       }
     },
 
@@ -145,6 +144,23 @@
         const validationFields = Object.values(this.form).map(field => field.isValid);
         return validationFields.includes(false) ? false : true;
       },
+      onBreakpoint() {
+        this.$nextTick(function () {
+          const checkBreakpoint = () => {
+            if (matchMedia('only screen and (min-width: 768px)').matches) {
+              this.isDesktop = true;
+            } else {
+              this.isDesktop = false;
+            }
+          }
+          window.addEventListener('load', checkBreakpoint);
+          window.addEventListener('resize', checkBreakpoint);
+        })
+      }
+    },
+
+    mounted() {
+      this.onBreakpoint();
     }
   }
 </script>
