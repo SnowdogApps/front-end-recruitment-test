@@ -70,7 +70,7 @@
           </div>
         </div>
       </div>
-      <div class="form-col pt-40 w-100 tablet-w-33" v-if="isDesktop">
+      <div class="form-col pt-40 w-100 tablet-w-33 mb-0" v-if="isDesktop">
         <OrderCard/>
       </div>
     </div>
@@ -166,6 +166,13 @@
 </script>
 
 <style lang="scss">
+  @use "sass:math";
+
+  $form-padding: 24px;
+  $form-block-margin: 36px;
+
+  $form-gap: 16px;
+
   .form {
     padding: 24px 0;
     @media (min-width: 768px) {
@@ -180,13 +187,13 @@
     &-box {
       display: flex;
       flex-wrap: wrap;
-      margin-left: -8px;
-      margin-right: -8px;
+      margin-left: -(math.div($form-gap, 2));
+      margin-right: -(math.div($form-gap, 2));
     }
     &-col {
-      padding-left: 8px;
-      padding-right: 8px;
-      margin-bottom: 16px;
+      padding-left: math.div($form-gap, 2);
+      padding-right: math.div($form-gap, 2);
+      margin-bottom: $form-gap;
     }
   }
 </style>
