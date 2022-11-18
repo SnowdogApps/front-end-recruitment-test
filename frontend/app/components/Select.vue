@@ -1,18 +1,14 @@
 <template>
   <div class="select" :tabindex="tabindex" @blur="open = false">
-    <div class="selected" :class="{ open: open }" @click="open = !open">
+    <div class="selected" :class="{ open: this.open }" @click="open = !this.open">
       <span class="input-label">{{ label }}</span>
       {{ selected }}
     </div>
-    <div class="items" :class="{ 'select-hide': !open }">
+    <div class="items" :class="{ 'select-hide': !this.open }">
       <div
         v-for="option in options"
         :key="option.id"
-        @click="
-          selected = option.name;
-          open = false;
-          $emit('input', option.name);
-        "
+        @click="getSelected(option)"
       >
         {{ option.name }}
       </div>
@@ -52,6 +48,14 @@ export default {
   mounted() {
     this.$emit("input", this.selected);
   },
+  methods: {
+    getSelected(option) {
+      this.selected = option.name;
+      this.open = false;
+      this.$emit('input', option.name);
+      console.log(option);
+    }
+  }
 };
 </script>
 

@@ -26,12 +26,12 @@
               />
             </div>
             <div class="form-col w-100 tablet-w-50">
-              <BaseInput v-model="form.postalCode.value" :placeholder="'00000'" :label="'Postal Code'" :isSubmitted="isSubmitted" :validation="{ required: true, type: 'postalCode' }" v-model:isValid="form.email.isValid" />
+              <BaseInput v-model="form.postalCode.value" :placeholder="'00000'" :label="'Postal Code'" v-maska="'#####'" :isSubmitted="isSubmitted" :validation="{ required: true, type: 'postalCode' }" v-model:isValid="form.postalCode.isValid" />
             </div>
           </div>
           <div class="form-box">
             <div class="form-col w-100">
-              <BaseInput v-model="form.phoneNumber.value" :placeholder="'000-000-000'" :label="'Phone Number'" />
+              <BaseInput v-model="form.phoneNumber.value" :placeholder="'000-000-000'" :label="'Phone Number'" v-maska="'###-###-###'" :isSubmitted="isSubmitted" :validation="{ required: true, type: 'phoneNumber' }" v-model:isValid="form.phoneNumber.isValid" />
             </div>
           </div>
         </div>
@@ -41,15 +41,15 @@
             <div class="form-col w-100">
               <div class="form-box">
                 <div class="form-col w-100">
-                  <BaseInput v-model="form.cardNumber.value" :placeholder="'000-0-00-0000-0000'" :label="'Credit Card Number'" :icon="'visa'" />
+                  <BaseInput v-model="form.cardNumber.value" :placeholder="'0000-0000-0000-0000'" :label="'Credit Card Number'" :icon="'visa'" v-maska="'####-####-####'" :isSubmitted="isSubmitted" :validation="{ required: true, type: 'cardNumber' }" v-model:isValid="form.cardNumber.isValid" />
                 </div>
               </div>
               <div class="form-box">
                 <div class="form-col w-100 tablet-w-50">
-                  <BaseInput v-model="form.cvvCode.value" :placeholder="'CVV'" :label="'Security Code'" :tooltip="true" :tooltipText="'Security Code'" :tooltipIcon="'question'" />
+                  <BaseInput :type="'password'" v-model="form.cvvCode.value" :placeholder="'CVV'" :label="'Security Code'" v-maska="'###'"  :isSubmitted="isSubmitted" :validation="{ required: true, type: 'cvvCode' }" v-model:isValid="form.cvvCode.isValid" :tooltip="true" :tooltipText="'Security Code'" :tooltipIcon="'question'" />
                 </div>
                 <div class="form-col w-100 tablet-w-50">
-                  <BaseInput v-model="form.expirationDate.value" :placeholder="'MM / YY'" :label="'Expiration Date'"/>
+                  <BaseInput v-model="form.expirationDate.value" :placeholder="'MM / YY'" :label="'Expiration Date'" v-maska="'## / ##'" :isSubmitted="isSubmitted" :validation="{ required: true, type: 'expirationDate' }" v-model:isValid="form.expirationDate.isValid" />
                 </div>
               </div>
             </div>
@@ -144,7 +144,7 @@
       isFormValid() {
         const validationFields = Object.values(this.form).map(field => field.isValid);
         return validationFields.includes(false) ? false : true;
-      }
+      },
     }
   }
 </script>

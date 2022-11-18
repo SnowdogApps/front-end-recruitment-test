@@ -3,7 +3,7 @@
     <label class="input-box">
       <span class="input-label">{{ label }}</span>
       <input
-        type="text"
+        :type="type"
         :value="modelValue"
         :isValid="isValid"
         :placeholder="placeholder"
@@ -34,6 +34,10 @@
       };
     },
     props: {
+      type: {
+        type: String,
+        default: "text",
+      },
       modelValue: String,
       placeholder: String,
       label: String,
@@ -54,12 +58,13 @@
       },
       isValid: Boolean,
       isSubmitted: Boolean,
-      regex: String,
+      mask: String,
     },
     emits: ['update:modelValue', 'update:isValid'],
     methods: {
       onInput(value) {
         const isValid = this.checkValid(value);
+
         this.$emit("update:modelValue", value);
         this.$emit("update:isValid", isValid);
       },
@@ -75,23 +80,44 @@
       },
       checkValid(value) {
         const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        const postalCodeRegex = /^[0-9]{5}$/;
 
         if (this.validation.required && value === "") {
           this.error = "This field is required";
           return false;
         }
+
         if (this.validation.required && this.validation?.type === "" && value.length < 3) {
           this.error = "The field should have at least 3 characters";
           return false;
         }
+
         if (this.validation.type === "email" && !emailRegex.test(value)) {
           this.error = "Please enter a valid email address";
           return false;
         }
 
-        if (this.validation.type === "postalCode" && !postalCodeRegex.test(value)) {
-          this.error = "Please enter a valid post code that contain 5 digits";
+        if (this.validation.type === "postalCode" && value.length < 5) {
+          this.error = "Please enter a valid post code that contains 5 digits";
+          return false;
+        }
+
+        if (this.validation.type === "phoneNumber" && value.length < 11) {
+          this.error = "Please enter a phone number code that contains 9 digits";
+          return false;
+        }
+
+        if (this.validation.type === "cardNumber" && value.length < 14) {
+          this.error = "Please enter a valid phone number that contains 16 digits";
+          return false;
+        }
+
+        if (this.validation.type === "cvvCode" && value.length < 3) {
+          this.error = "Please enter a valid CVV code that contains 3 digits";
+          return false;
+        }
+
+        if (this.validation.type === "expirationDate" && value.length < 7) {
+          this.error = "Please enter a valid expiration date that contains 4 digits MM/YY";
           return false;
         }
 
