@@ -92,32 +92,32 @@
         }
 
         if (this.validation.type === "email" && !emailRegex.test(value)) {
-          this.error = "Please enter a valid email address";
+          this.error = "Please, enter a valid email address";
           return false;
         }
 
         if (this.validation.type === "postalCode" && value.length < 5) {
-          this.error = "Please enter a valid post code that contains 5 digits";
+          this.error = "Please, enter a valid post code that contains 5 digits";
           return false;
         }
 
         if (this.validation.type === "phoneNumber" && value.length < 11) {
-          this.error = "Please enter a phone number code that contains 9 digits";
+          this.error = "Please, enter a phone number code that contains 9 digits";
           return false;
         }
 
         if (this.validation.type === "cardNumber" && value.length < 14) {
-          this.error = "Please enter a valid phone number that contains 16 digits";
+          this.error = "Please, enter a valid phone number that contains 16 digits";
           return false;
         }
 
         if (this.validation.type === "cvvCode" && value.length < 3) {
-          this.error = "Please enter a valid CVV code that contains 3 digits";
+          this.error = "Please, enter a valid CVV code that contains 3 digits";
           return false;
         }
 
         if (this.validation.type === "expirationDate" && value.length < 7) {
-          this.error = "Please enter a valid expiration date that contains 4 digits MM/YY";
+          this.error = "Please, enter a valid expiration date that contains 4 digits MM/YY";
           return false;
         }
 
@@ -144,14 +144,13 @@
   $input-border-width: 1px;
   $input-border-radius: 4px;
 
-  // input and label height
+  // input height
   $input-height: 48px;
-  $input-label-line-height: 16px;
 
   // input paddings
   $input-padding-left: 16px;
   $input-padding-right: $input-padding-left;
-  $input-padding-top: $input-label-line-height;
+  $input-padding-top: $input-padding-left;
 
   // input icon settings
   $input-icon-color: #6C7689;
@@ -223,7 +222,7 @@
       left: $input-padding-left + $input-border-width;
       font-weight: 600;
       font-size: 10px;
-      line-height: $input-label-line-height;
+      line-height: 16px;
       letter-spacing: 0.0015em;
     }
 

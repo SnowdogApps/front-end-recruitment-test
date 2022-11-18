@@ -20,9 +20,12 @@
           <div class="form-box">
             <div class="form-col w-100 tablet-w-50">
               <Select
+                v-model="form.country.value"
                 :label="'Country'"
-                :options="form.countries"
+                :options="countries"
                 :default="'Select the country'"
+                :isSubmitted="isSubmitted"
+                :validation="{ required: true }" v-model:isValid="form.country.isValid"
               />
             </div>
             <div class="form-col w-100 tablet-w-50">
@@ -78,6 +81,8 @@
 </template>
 
 <script>
+  import axios from 'axios'
+
   import Title from '@/components/Title.vue'
   import BaseInput from '@/components/BaseInput.vue'
   import Button from '@/components/Button.vue'
@@ -90,12 +95,16 @@
 
     data() {
       return {
+        countries: [
+          { id: 1, name: "United States" },
+          { id: 2, name: "United Kingdom" },
+          { id: 3, name: "Poland" }
+        ],
         form: {
-          countries: [
-            { id: 1, name: "United States" },
-            { id: 2, name: "United Kingdom" },
-            { id: 3, name: "Poland" }
-          ],
+          country: {
+            value: "",
+            isValid: false,
+          },
           firstName: {
             value: "",
             isValid: false,

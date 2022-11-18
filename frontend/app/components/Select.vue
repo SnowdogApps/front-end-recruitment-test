@@ -1,62 +1,87 @@
 <template>
-  <div class="select" :tabindex="tabindex" @blur="open = false">
-    <div class="selected" :class="{ open: this.open }" @click="open = !this.open">
-      <span class="input-label">{{ label }}</span>
-      {{ selected }}
-    </div>
-    <div class="items" :class="{ 'select-hide': !this.open }">
-      <div
-        v-for="option in options"
-        :key="option.id"
-        @click="getSelected(option)"
-      >
-        {{ option.name }}
+  <div class="select-block" :class="{'is-invalid': isSubmitted && this.error}">
+    <div class="select" :tabindex="tabindex" @blur="open = false">
+      <div class="selected" :class="{ open: this.open }" @click="open = !this.open">
+        <span class="select-label">{{ label }}</span>
+        {{ selected }}
+      </div>
+      <div class="items" :class="{ 'select-hide': !this.open }">
+        <div
+          v-for="option in options"
+          :key="option.id"
+          :isValid="isValid"
+          @click="onSelect(option)"
+        >
+          {{ option.name }}
+        </div>
       </div>
     </div>
+    <span class="error" v-if="isSubmitted && this.error">{{ this.error }}</span>
   </div>
 </template>
 
 <script>
-export default {
-  props: {
-    label: String,
-    options: {
-      type: Array,
-      required: true,
+  export default {
+    props: {
+      label: String,
+      modelValue: String,
+      options: {
+        type: Array,
+        required: true,
+      },
+      default: {
+        type: String,
+        required: false,
+        default: null,
+      },
+      tabindex: {
+        type: Number,
+        required: false,
+        default: 0,
+      },
+      validation: {
+        type: Object,
+        default: () => ({
+          required: Boolean,
+          type: String,
+        }),
+      },
+      isValid: Boolean,
+      isSubmitted: Boolean,
     },
-    default: {
-      type: String,
-      required: false,
-      default: null,
+    data() {
+      return {
+        selected: this.default
+          ? this.default
+          : this.options.length > 0
+          ? this.options[0]
+          : null,
+        open: false,
+        error: "Please, select the country",
+      };
     },
-    tabindex: {
-      type: Number,
-      required: false,
-      default: 0,
-    },
-  },
-  data() {
-    return {
-      selected: this.default
-        ? this.default
-        : this.options.length > 0
-        ? this.options[0]
-        : null,
-      open: false,
-    };
-  },
-  mounted() {
-    this.$emit("input", this.selected);
-  },
-  methods: {
-    getSelected(option) {
-      this.selected = option.name;
-      this.open = false;
-      this.$emit('input', option.name);
-      console.log(option);
+    methods: {
+      onSelect(option) {
+        const isValid = this.checkValid(option);
+
+        this.selected = option.name;
+        this.open = false;
+
+        this.$emit("update:modelValue", option.name);
+        this.$emit("update:isValid", isValid);
+      },
+      
+      checkValid(value) {
+        if (this.validation.required && value === "") {
+          this.error = "Please, select the country";
+          return false;
+        }
+
+        this.error = "";
+        return true;
+      },
     }
-  }
-};
+  };
 </script>
 
 <style lang="scss" scoped>
@@ -64,12 +89,40 @@ export default {
   $select-bg-color: #fff;
   $select-border-width: 1px;
   $select-border-radius: 4px;
+  $select-padding-left: 16px;
+  
+  $error-color: #E0535E;
 
   .select {
     position: relative;
     width: 100%;
     text-align: left;
     outline: none;
+    &-block {
+      &.is-invalid {
+        .selected {
+          border-color: $error-color;
+        }
+        .select-label, .selected, .error {
+          color: $error-color;
+        }
+        .error {
+          font-size: 12px;
+          padding-top: 5px;
+        }
+      }
+    }
+    
+    &-label {
+      position: absolute;
+      top: 5px + $select-border-width;
+      left: $select-padding-left + $select-border-width;
+      font-weight: 600;
+      font-size: 10px;
+      line-height: 16px;
+      letter-spacing: 0.0015em;
+    }
+
     .selected {
       background-color: $select-bg-color;
       box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.04);
