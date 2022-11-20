@@ -106,7 +106,7 @@
           return false;
         }
 
-        if (this.validation.type === "cardNumber" && value.length < 14) {
+        if (this.validation.type === "cardNumber" && value.length < 19) {
           this.error = "Please, enter a valid phone number that contains 16 digits";
           return false;
         }

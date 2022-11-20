@@ -1,5 +1,5 @@
 <template>
-  <form class="form" @submit.prevent="submitForm">
+  <form class="form" @submit.prevent="submitOrder">
     <div class="form-box">
       <div class="form-col w-100 tablet-w-66 mb-0">
         <div class="form-block">
@@ -44,7 +44,7 @@
             <div class="form-col w-100">
               <div class="form-box">
                 <div class="form-col w-100">
-                  <BaseInput v-model="form.cardNumber.value" :placeholder="'0000-0000-0000-0000'" :label="'Credit Card Number'" :icon="'visa'" v-maska="'####-####-####'" :isSubmitted="isSubmitted" :validation="{ required: true, type: 'cardNumber' }" v-model:isValid="form.cardNumber.isValid" />
+                  <BaseInput v-model="form.cardNumber.value" :placeholder="'0000-0000-0000-0000'" :label="'Credit Card Number'" :icon="'visa'" v-maska="'####-####-####-####'" :isSubmitted="isSubmitted" :validation="{ required: true, type: 'cardNumber' }" v-model:isValid="form.cardNumber.isValid" />
                 </div>
               </div>
               <div class="form-box">
@@ -140,11 +140,47 @@
     },
 
     methods: {
-      submitForm() {
+      convertData() {
+        return {
+          firstName: this.form.firstName.value,
+          lastName: this.form.lastName.value,
+          email: this.form.email.value,
+          country: this.form.country.value,
+          postalCode: this.form.postalCode.value,
+          phoneNumber: this.form.phoneNumber.value.replace(
+            /(\d{3})-(\d{3})-(\d{3})/, "$1$2$3"
+          ),
+          cardNumber: this.form.cardNumber.value.replace(
+            /(\d{4})-(\d{4})-(\d{4})-(\d{4})/,
+            "$1$2$3$4"
+          ),
+          cvvCode: this.form.cvvCode.value,
+          expirationDate: this.form.expirationDate.value,
+        }
+      },
+      submitOrder() {
         this.isSubmitted = true;
 
         if (this.isFormValid()) {
-          console.log("Form is valid", this.form);
+          const url = '/order'
+          const postData = this.convertData();
+
+          console.log(postData);
+          axios.post(
+            url,
+            postData,
+            {
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json, text-plain, */*",
+                "X-Requested-With": "XMLHttpRequest",
+                "Access-Control-Allow-Origin": "*",
+              },
+            }
+          )
+          .catch(error => {
+            console.log(error);
+          })
         } else {
           console.log("Form is NOT valid", this.form);
         }
