@@ -17,7 +17,9 @@
         <Tooltip v-if="tooltip" :tooltipText="tooltipText" :tooltipIcon="tooltipIcon" :tooltipPosition="tooltipPosition" />
       </div>
     </label>
-    <span class="error" v-if="isSubmitted && this.error">{{ this.error }}</span>
+    <transition>
+      <span class="error" v-if="isSubmitted && this.error">{{ this.error }}</span>
+    </transition>
   </div>
 </template>
 
@@ -184,6 +186,11 @@
     }
 
     &-block {
+      .error {
+        font-size: 12px;
+        padding-top: 5px;
+        color: $error-color;
+      }
       &.is-invalid {
         .input {
           border-color: $error-color;
@@ -191,12 +198,6 @@
           &-label {
             color: $error-color;
           }
-        }
-
-        .error {
-          font-size: 12px;
-          padding-top: 5px;
-          color: $error-color;
         }
       }
     }

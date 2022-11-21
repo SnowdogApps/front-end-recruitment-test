@@ -1,4 +1,5 @@
 <template>
+  <Alert :data="alert" />
   <form class="form" @submit.prevent="submitOrder">
     <div class="form-box">
       <div class="form-col w-100 tablet-w-66 mb-0">
@@ -83,6 +84,7 @@
 <script>
   import axios from 'axios'
 
+  import Alert from '@/components/Alert.vue'
   import Title from '@/components/Title.vue'
   import Input from '@/components/Input.vue'
   import Button from '@/components/Button.vue'
@@ -91,10 +93,15 @@
 
   export default {
     name: 'Form',
-    components: { Title, Input, Button, Select, Checkout },
+    components: { Alert, Title, Input, Button, Select, Checkout },
 
     data() {
       return {
+        alert: {
+          classes: "",
+          display: false,
+          message: "",
+        },
         countries: [
           { id: 1, name: "United States" },
           { id: 2, name: "United Kingdom" },
@@ -171,14 +178,26 @@
 
           axios.post('/order', { ...postFormData, ...checkoutData })
           .then(response => {
-            console.log({...postFormData, ...checkoutData});
-            if(response.status === 200) {
-              alert(response.data.message);
+            try {
+              if (response.status !== 200) throw `Error: ${response.status}`;
+              this.alert.classes = "alert__success";
+              this.alert.display = true;
+              setTimeout(() => {
+                this.alert.display = false;
+              }, 3000);
+              this.alert.message = response.data.message;
+            } catch (error) {
+              this.alert.classes = "alert__error";
+              this.alert.display = true;
+              setTimeout(() => {
+                this.alert.display = false;
+              }, 3000);
+              this.alert.message = error;
             }
           })
-          .catch(error => {
-            alert(error.message);
-          })
+          // .catch(error => {
+          //   alert(error.message);
+          // })
         }
       },
       isFormValid() {

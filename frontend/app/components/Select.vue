@@ -16,7 +16,9 @@
         </div>
       </div>
     </div>
-    <span class="error" v-if="isSubmitted && this.error">{{ this.error }}</span>
+    <transition>
+      <span class="error" v-if="isSubmitted && this.error">{{ this.error }}</span>
+    </transition>
   </div>
 </template>
 
@@ -99,16 +101,17 @@
     text-align: left;
     outline: none;
     &-block {
+      .error {
+        font-size: 12px;
+        padding-top: 5px;
+        color: $error-color;
+      }
       &.is-invalid {
         .selected {
           border-color: $error-color;
         }
-        .select-label, .selected, .error {
+        .select-label, .selected {
           color: $error-color;
-        }
-        .error {
-          font-size: 12px;
-          padding-top: 5px;
         }
       }
     }
