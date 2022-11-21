@@ -42,23 +42,13 @@
             { name: "Modern Buckle", price: 380 },
           ],
           totals: {
-            subTotal: Number,
+            subTotal: 960,
             tax: 0,
-            grandTotal: Number,
+            grandTotal: 960,
           },
         },
       }
     },
-    methods: {
-      getTotals() {
-        this.cart.totals.subTotal = this.cart.items.reduce((value, item) => value + item.price, 0);
-        this.cart.totals.grandTotal = this.cart.totals.subTotal + this.cart.totals.tax;
-        return;
-      },
-    },
-    mounted() {
-      this.getTotals();
-    }
   }
 </script>
 

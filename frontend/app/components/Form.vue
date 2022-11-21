@@ -6,15 +6,15 @@
           <Title :text="'Personal Information'" :counter="1" />
           <div class="form-box">
             <div class="form-col w-100 tablet-w-50">
-              <BaseInput v-model="form.firstName.value" :placeholder="'First Name'" :label="'First Name'" :isSubmitted="isSubmitted" :validation="{ required: true }" v-model:isValid="form.firstName.isValid" />
+              <Input v-model="form.firstName.value" :placeholder="'First Name'" :label="'First Name'" :isSubmitted="isSubmitted" :validation="{ required: true }" v-model:isValid="form.firstName.isValid" />
             </div>
             <div class="form-col w-100 tablet-w-50">
-              <BaseInput v-model="form.lastName.value" :placeholder="'Last Name'" :label="'Last Name'" :isSubmitted="isSubmitted"  :validation="{ required: true }" v-model:isValid="form.lastName.isValid" />
+              <Input v-model="form.lastName.value" :placeholder="'Last Name'" :label="'Last Name'" :isSubmitted="isSubmitted"  :validation="{ required: true }" v-model:isValid="form.lastName.isValid" />
             </div>
           </div>
           <div class="form-box">
             <div class="form-col w-100">
-              <BaseInput v-model="form.email.value" :placeholder="'email@email.com'" :label="'Email'" :isSubmitted="isSubmitted" :validation="{ required: true, type: 'email' }" v-model:isValid="form.email.isValid" />
+              <Input v-model="form.email.value" :placeholder="'email@email.com'" :label="'Email'" :isSubmitted="isSubmitted" :validation="{ required: true, type: 'email' }" v-model:isValid="form.email.isValid" />
             </div>
           </div>
           <div class="form-box">
@@ -29,12 +29,12 @@
               />
             </div>
             <div class="form-col w-100 tablet-w-50">
-              <BaseInput v-model="form.postalCode.value" :placeholder="'00000'" :label="'Postal Code'" v-maska="'#####'" :isSubmitted="isSubmitted" :validation="{ required: true, type: 'postalCode' }" v-model:isValid="form.postalCode.isValid" />
+              <Input v-model="form.postalCode.value" :placeholder="'00000'" :label="'Postal Code'" v-maska="'#####'" :isSubmitted="isSubmitted" :validation="{ required: true, type: 'postalCode' }" v-model:isValid="form.postalCode.isValid" />
             </div>
           </div>
           <div class="form-box">
             <div class="form-col w-100">
-              <BaseInput v-model="form.phoneNumber.value" :placeholder="'000-000-000'" :label="'Phone Number'" v-maska="'###-###-###'" :isSubmitted="isSubmitted" :validation="{ required: true, type: 'phoneNumber' }" v-model:isValid="form.phoneNumber.isValid" />
+              <Input v-model="form.phone.value" :placeholder="'000-000-000'" :label="'Phone Number'" v-maska="'###-###-###'" :isSubmitted="isSubmitted" :validation="{ required: true, type: 'phone' }" v-model:isValid="form.phone.isValid" />
             </div>
           </div>
         </div>
@@ -44,15 +44,15 @@
             <div class="form-col w-100">
               <div class="form-box">
                 <div class="form-col w-100">
-                  <BaseInput v-model="form.cardNumber.value" :placeholder="'0000-0000-0000-0000'" :label="'Credit Card Number'" :icon="'visa'" v-maska="'####-####-####-####'" :isSubmitted="isSubmitted" :validation="{ required: true, type: 'cardNumber' }" v-model:isValid="form.cardNumber.isValid" />
+                  <Input v-model="form.creditCard.value" :placeholder="'0000-0000-0000-0000'" :label="'Credit Card Number'" :icon="'visa'" v-maska="'####-####-####-####'" :isSubmitted="isSubmitted" :validation="{ required: true, type: 'creditCard' }" v-model:isValid="form.creditCard.isValid" />
                 </div>
               </div>
               <div class="form-box">
                 <div class="form-col w-100 tablet-w-50">
-                  <BaseInput :type="'password'" v-model="form.cvvCode.value" :placeholder="'CVV'" :label="'Security Code'" v-maska="'###'"  :isSubmitted="isSubmitted" :validation="{ required: true, type: 'cvvCode' }" v-model:isValid="form.cvvCode.isValid" :tooltip="true" :tooltipText="'Security Code'" :tooltipIcon="'question'" />
+                  <Input :type="'password'" v-model="form.CVV.value" :placeholder="'CVV'" :label="'Security Code'" v-maska="'###'"  :isSubmitted="isSubmitted" :validation="{ required: true, type: 'CVV' }" v-model:isValid="form.CVV.isValid" :tooltip="true" :tooltipText="'Security Code'" :tooltipIcon="'question'" />
                 </div>
                 <div class="form-col w-100 tablet-w-50">
-                  <BaseInput v-model="form.expirationDate.value" :placeholder="'MM / YY'" :label="'Expiration Date'" v-maska="'## / ##'" :isSubmitted="isSubmitted" :validation="{ required: true, type: 'expirationDate' }" v-model:isValid="form.expirationDate.isValid" />
+                  <Input v-model="form.expDate.value" :placeholder="'MM/YY'" :label="'Expiration Date'" v-maska="'##/##'" :isSubmitted="isSubmitted" :validation="{ required: true, type: 'expDate' }" v-model:isValid="form.expDate.isValid" />
                 </div>
               </div>
             </div>
@@ -61,7 +61,7 @@
         <div class="form-block pt-32 border-top-1 border-black" v-if="!isDesktop">
           <div class="form-box">
             <div class="form-col w-100 mb-0">
-              <OrderCard/>
+              <Checkout ref="checkout"/>
             </div>
           </div>
         </div>
@@ -74,7 +74,7 @@
         </div>
       </div>
       <div class="form-col pt-40 w-100 tablet-w-33 mb-0" v-if="isDesktop">
-        <OrderCard/>
+        <Checkout ref="checkout" />
       </div>
     </div>
   </form>
@@ -84,14 +84,14 @@
   import axios from 'axios'
 
   import Title from '@/components/Title.vue'
-  import BaseInput from '@/components/BaseInput.vue'
+  import Input from '@/components/Input.vue'
   import Button from '@/components/Button.vue'
   import Select from '@/components/Select.vue'
-  import OrderCard from '@/components/OrderCard.vue'
+  import Checkout from '@/components/Checkout.vue'
 
   export default {
     name: 'Form',
-    components: { Title, BaseInput, Button, Select, OrderCard },
+    components: { Title, Input, Button, Select, Checkout },
 
     data() {
       return {
@@ -121,17 +121,21 @@
             value: "",
             isValid: false,
           },
-          phoneNumber: {
+          phone: {
             value: "",
+            isValid: false,
           },
-          cardNumber: {
+          creditCard: {
             value: "",
+            isValid: false,
           },
-          cvvCode: {
+          CVV: {
             value: "",
+            isValid: false,
           },
-          expirationDate: {
+          expDate: {
             value: "",
+            isValid: false,
           },
         },
         isSubmitted: false,
@@ -147,42 +151,34 @@
           email: this.form.email.value,
           country: this.form.country.value,
           postalCode: this.form.postalCode.value,
-          phoneNumber: this.form.phoneNumber.value.replace(
+          phone: this.form.phone.value.replace(
             /(\d{3})-(\d{3})-(\d{3})/, "$1$2$3"
           ),
-          cardNumber: this.form.cardNumber.value.replace(
+          creditCard: this.form.creditCard.value.replace(
             /(\d{4})-(\d{4})-(\d{4})-(\d{4})/,
             "$1$2$3$4"
           ),
-          cvvCode: this.form.cvvCode.value,
-          expirationDate: this.form.expirationDate.value,
+          CVV: this.form.CVV.value,
+          expDate: this.form.expDate.value,
         }
       },
       submitOrder() {
         this.isSubmitted = true;
-
         if (this.isFormValid()) {
-          const url = '/order'
-          const postData = this.convertData();
+          const postFormData = this.convertData();
+          const checkoutData = this.$refs.checkout.$data;
+          let resStatus = 0;
 
-          console.log(postData);
-          axios.post(
-            url,
-            postData,
-            {
-              headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json, text-plain, */*",
-                "X-Requested-With": "XMLHttpRequest",
-                "Access-Control-Allow-Origin": "*",
-              },
+          axios.post('/order', { ...postFormData, ...checkoutData })
+          .then(response => {
+            console.log({...postFormData, ...checkoutData});
+            if(response.status === 200) {
+              alert(response.data.message);
             }
-          )
-          .catch(error => {
-            console.log(error);
           })
-        } else {
-          console.log("Form is NOT valid", this.form);
+          .catch(error => {
+            alert(error.message);
+          })
         }
       },
       isFormValid() {

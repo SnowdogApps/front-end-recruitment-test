@@ -26,7 +26,7 @@
   import Tooltip from '@/components/Tooltip.vue'
 
   export default {
-    name: 'BaseInput',
+    name: 'Input',
     components: { Icon, Tooltip },
     data() {
       return {
@@ -101,22 +101,22 @@
           return false;
         }
 
-        if (this.validation.type === "phoneNumber" && value.length < 11) {
+        if (this.validation.type === "phone" && value.length < 11) {
           this.error = "Please, enter a phone number code that contains 9 digits";
           return false;
         }
 
-        if (this.validation.type === "cardNumber" && value.length < 19) {
+        if (this.validation.type === "creditCard" && value.length < 19) {
           this.error = "Please, enter a valid phone number that contains 16 digits";
           return false;
         }
 
-        if (this.validation.type === "cvvCode" && value.length < 3) {
+        if (this.validation.type === "CVV" && value.length < 3) {
           this.error = "Please, enter a valid CVV code that contains 3 digits";
           return false;
         }
 
-        if (this.validation.type === "expirationDate" && value.length < 7) {
+        if (this.validation.type === "expDate" && value.length < 5) {
           this.error = "Please, enter a valid expiration date that contains 4 digits MM/YY";
           return false;
         }
